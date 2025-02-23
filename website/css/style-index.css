@@ -1,0 +1,336 @@
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes slideInLeft {
+    from { transform: translateX(-100px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+  
+  @keyframes slideInRight {
+    from { transform: translateX(100px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+  
+@keyframe typing{
+    from {
+        width:0;
+    }
+    to {
+        width:100;
+    }
+}
+@keyframes blink {
+    50% {
+      border-color: transparent
+    }
+}
+  
+  /* Scroll-triggered animations */
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+  }
+  
+  .slide-in-left {
+    opacity: 0;
+    animation: slideInLeft 1s ease forwards;
+  }
+  
+  .slide-in-right {
+    opacity: 0;
+    animation: slideInRight 1s ease forwards;
+  }
+  
+  /* Typing effect for rupee box */
+  .rupee-box.typing-effect {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 2s steps(40) forwards;
+  }
+  
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Animation delays */
+  .delay-1 { animation-delay: 0.3s; }
+  .delay-2 { animation-delay: 0.6s; }
+  .delay-3 { animation-delay: 0.9s; }
+
+
+
+.info-section {
+    background-color: #f3f3f3;
+    padding: 30px 20px;
+}
+
+.info-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.info-text {
+    max-width: 50%;
+}
+
+.info-text h1 {
+    font-family: "Assistant", serif;
+            font-size: 50px;
+            font-weight: 700;
+            text-align: left;
+            margin-left: 50px;
+            color: #000;
+            margin-bottom: 0;
+            margin-top: 0;
+            padding-bottom: 10px;
+            line-height: 1.2;
+}
+
+.info-text p {
+    font-size: 22px;
+            font-family: "Source Sans 3", serif;
+            font-weight: 300;
+            color: #000;
+            margin-left: 50px;
+            margin-top: 0;
+            text-align: left;
+            line-height: 1.5;
+}
+
+.info-image img {
+    max-width: 80%;
+    height: auto;
+    margin-left: 83px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+}
+.page-wrapper {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.page-wrapper.fade-out {
+    opacity: 0;
+}
+.year-box {
+    display: inline-block;
+    background-color: #F40404; /* Red color */
+    color: #fff; /* White text */
+    padding: 5px 10px; /* Padding inside the box */
+    border-radius: 5px; /* Rounded corners */
+    font-weight: bold;
+    margin-left: 0px; /* Space between the text and the box */
+    margin-top: 0;
+}
+.rupee-box {
+    display: inline-block;
+    background-color: #F40404; /* Red color */
+    color: #fff; /* White text */
+    padding: 5px 10px; /* Padding inside the box */
+    border-radius: 5px; /* Rounded corners */
+    font-weight: bold;
+    margin-left: 0px; /* Space between the text and the box */
+    margin-top: 0;
+}
+
+.product-button {
+    background-color: #F40404;
+    color: #fff;
+    border: none;
+    padding: 15px 28px;
+    font-size: 1rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 50px;
+    display: block;
+}
+
+.hero-alt {
+    min-height: 50vh; /* Slightly shorter than full screen */
+    background: url('../images/sectionimg.jpg') no-repeat center center / cover; /* Background image */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    text-align: center; /* Center-align text */
+    color: #ffffff; /* White text */
+    position: relative; /* For layering */
+    padding: 40px 20px; /* Padding for spacing */
+}
+
+.hero-alt::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for better visibility */
+    z-index: 1; /* Place below text */
+}
+
+.hero-alt-content {
+    position: relative; /* Ensure above overlay */
+    z-index: 2; /* Content above overlay */
+    max-width: 800px; /* Limit width of the content */
+}
+
+.hero-alt h1 {
+    font-family: "Assistant", serif;
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.hero-alt p {
+    font-family: "Source Sans 3", serif;
+    font-size: 1.2rem;
+    margin-bottom: 60px;
+}
+
+.progress-bar-container {
+    margin-top: 20px;
+    text-align: center;
+    font-family: "Source Sans 3", serif;
+
+}
+
+.progress-label {
+    font-size: 16px;
+    margin-bottom: 8px;
+    display: block;
+    font-family: "Source Sans 3", serif;
+}
+
+.progress-bar {
+    width: 80%; /* Adjust width as needed */
+    height: 20px; /* Bar height */
+    background-color: rgba(255, 255, 255, 0.3); /* Light white for background bar */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Ensure progress stays within bar */
+    margin: 0 auto;
+}
+
+.progress {
+    height: 100%; /* Match height of bar */
+    background-color: #F40404; /* Green color for progress */
+    width: 0; /* Initial width (to be animated) */
+    transition: width 1s ease; /* Smooth animation for width */
+}
+
+.progress-bar-container .progress {
+    width: 82%; /* Adjust this value to represent progress */
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1) translateY(-5px);
+}
+
+.whatsapp-float-icon {
+    width: 35px;
+    height: 35px;
+}
+
+.whatsapp-emoji {
+    font-size: 32px;
+}
+
+@media (max-width: 768px) {
+
+        .whatsapp-float {
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+        }
+        
+        .whatsapp-float-icon {
+            width: 28px;
+            height: 28px;
+        }
+
+    .info-section{
+        padding-top: 0;
+
+        
+    }
+    .info-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .info-text {
+        max-width: 100%;
+        margin-top: 0;
+        text-align: center;
+    }
+
+    .info-text h1 {
+        font-size: 2rem;
+        margin-top: 20px;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .info-text p {
+        font-size: 0.9rem;
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .info-image img {
+        margin-top: 10px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .product-button {
+        padding: 10px 15px;
+        display: inline-block;
+        margin-left: 0;
+        
+    }
+    .hero-alt {
+        min-height: 300px;
+        padding: 10px;
+    }
+
+    .hero-alt h1 {
+        font-size: 30px;
+    }
+
+    .hero-alt p {
+        font-size: 14px;
+    }
+
+    .progress-bar {
+        width: 90%; /* Adjust for smaller screens */
+    }
+    .progress-label {
+        font-size: 10px;
+    }
+}
+

@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products & Services - NIVAN</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/service-styles.css">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@700&family=Atkinson+Hyperlegible+Next&family=Source+Sans+3:wght@300&display=swap" rel="stylesheet">
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: "Source Sans 3", serif;
+            background-color: #fff;
+            border-bottom: 1px solid #ccc;
+            padding: 10px 20px;
+            position: relative;
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li:not(:first-child)::before {
+        content: '|'; /* Add separator */
+        margin-right: 10px; /* Space between the separator and the text */
+        color: #ccc; /* Separator color */
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .hamburger {
+            margin-left: auto;
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+        }
+
+        .menu {
+            display: flex;
+        }
+
+        .hero {
+            background: url('images/bg10.jpg') no-repeat center bottom / cover;
+            color: #f8f9fa;
+            text-align: center;
+            height: 100px;
+            padding: 90px 50px;
+            background-position: center bottom 10%;
+        }
+
+        .hero h1 {
+            font-family: "Assistant", serif;
+            font-size: 60px;
+            font-weight: 700;
+            text-align: left;
+            margin-left: 50px;
+            color: #FCF3F2;
+            margin-bottom: 0;
+            margin-top: 0;
+            padding-bottom: 10px;
+            line-height: 1.2;
+        }
+        .hero h2 {
+            font-family: "Source Sans 3", serif;
+            font-size: 22px;
+            text-align: left;
+            margin-left: 50px;
+        }
+        footer {
+        background-color: #151515;
+        color: #e0e0e0;
+        padding: 40px 20px 20px;
+        font-family: 'Arial', sans-serif;
+        }
+
+        .footer-container {
+        max-width: 1100px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 280px;
+        padding-bottom: 30px;
+        }
+
+        .footer-section h3 {
+        color: #fff;
+        margin-bottom: 0px;
+        font-size: 1.2em;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        }
+
+        .footer-section ul {
+        list-style: none;
+        padding: 0;
+        }
+
+        .footer-section li {
+        margin-bottom: 10px;
+        }
+
+        .footer-section a {
+        color: #e0e0e0;
+        text-decoration: none;
+        transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+        color: #F40404;
+        }
+
+        .address {
+        line-height: 1.6;
+        text-align: left;
+        opacity: 0.9;
+        }
+        .info {
+            font-family: "Source Sans 3", serif;
+            opacity: 0.9;
+
+
+        }
+
+        .footer-bottom {
+        border-top: 3px solid #F40404;
+        margin-top: 0px;
+        text-align: left;
+        }
+
+
+    @media (max-width: 768px) {
+    body {
+        margin: 0;
+        font-size: 14px;
+    }
+
+     header img {
+        height: 50px;
+        
+    }
+
+    .hero {
+        height: auto;
+        padding: 60px 15px;
+        text-align: center;
+        background-position: center center;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .hero h2 {
+        font-size: 1rem;
+        margin: 10px auto 0;
+        text-align: center;
+    }
+
+    
+
+            .hamburger {
+                display: flex;
+            }
+
+            .menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                left: 20px;
+                background-color: white;
+                border: 1px solid #ccc;
+                padding: 10px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                width: calc(100% - 40px);
+                z-index: 10;
+            }
+
+            .menu.show {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
+    }
+    
+    .footer-section h3 {
+        margin-bottom: 15px;
+    }
+    
+    .footer-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .address {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    }   
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <a href="index.html"><img src="images/logo.jpg" alt="Nivan Logo"></a>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="contactus.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        <h1 class="animate-title">Products & Services.</h1>
+        <h2 class="service-subtitle"><span class="highlight">Quality You Can Trust.</span></h2>
+    </section>
+
+    <!-- Main Service Content -->
+<div class="service-content">
+    <section class="service-section scroll-reveal">
+        <div class="section-header">
+            <h2>Cable Assembly</h2>
+            <p>Leading provider of Nivan Speedometer Cable Assembly, Rear Brake Cable Assembly, and more.</p>
+        </div>
+        <div class="carousel-container">
+            <div class="carousel-track first-carousel">
+                <div class="product-item first-item">
+                    <img src="imgsproduct/speedometer-cable.jpeg" alt="Speedometer Cable">
+                    <div class="product-details">
+                        <span>Nivan Speedometer Cable Assembly</span>
+                        <span class="product-moq">MOQ: 50 units</span>
+                    </div>
+                </div>
+                <div class="product-item first-item">
+                    <img src="imgsproduct/product_rear_break_cable.webp" alt="Rear Brake Cable">
+                    <div class="product-details">
+                        <span>Nivan Rear Brake Cable Assembly</span>
+                        <span class="product-moq">MOQ: 50 units</span>
+                    </div>
+                </div>
+                <div class="product-item first-item">
+                    <img src="imgsproduct/throttle.jpeg" alt="Throttle Cable">
+                    <div class="product-details">
+                        <span>Nivan Throttle Cable Assembly</span>
+                        <span class="product-moq">MOQ: 50 units</span>
+                    </div>
+                </div>
+                <div class="product-item first-item">
+                    <img src="imgsproduct/deluxe-throttle.jpeg" alt="Deluxe Throttle Cable">
+                    <div class="product-details">
+                        <span>Nivan Deluxe Throttle Cable Assembly</span>
+                        <span class="product-moq">MOQ: 50 units</span>
+                    </div>
+                </div>
+                <div class="product-item first-item">
+                    <img src="imgsproduct/deluxe-speedo.jpeg" alt="Deluxe Speedometer Cable">
+                    <div class="product-details">
+                        <span>Nivan Deluxe Speedometer Cable Assembly</span>
+                        <span class="product-moq">MOQ: 50 units</span>
+                    </div>
+                </div>
+                <div class="product-item first-item">
+                    <img src="imgsproduct/old-dawn-throttle.jpeg" alt="Dawn Old Model Throttle Cable">
+                    <div class="product-details">
+                        <span>Nivan Dawn Old Model Throttle Cable Assembly</span>
+                        <span class="product-moq">MOQ: 50 units</span>
+                    </div>
+                </div>
+                <div class="product-item first-item">
+                    <img src="imgsproduct/bs6-throttle.jpeg" alt="HF DLX BS6 Throttle Cable">
+                    <div class="product-details">
+                        <span>Nivan HF DLX BS6 Throttle Cable Assembly</span>
+                        <span class="product-moq">MOQ: 50 units</span>
+                    </div>
+                </div>
+                <div class="product-item first-item">
+                    <img src="imgsproduct/stunner-clutcch.jpeg" alt="Stunner Clutch Cable">
+                    <div class="product-details">
+                        <span>Nivan Stunner Clutch Cable Assembly</span>
+                        <span class="product-moq">MOQ: 10 units</span>
+                    </div>
+                </div>
+                <div class="product-item first-item">
+                    <img src="imgsproduct/stunner-throtle.jpeg" alt="Stunner Throttle Cable">
+                    <div class="product-details">
+                        <span>Nivan Stunner Throttle Cable Assembly</span>
+                        <span class="product-moq">MOQ: 10 units</span>
+                    </div>
+                </div>
+                <div class="product-item first-item">
+                    <img src="imgsproduct/stunner-front-break.jpeg" alt="Stunner Front Brake Cable">
+                    <div class="product-details">
+                        <span>Nivan Stunner Front Brake Cable Assembly</span>
+                        <span class="product-moq">MOQ: 50 units</span>
+                    </div>
+                </div>
+                <div class="product-item first-item">
+                    <img src="imgsproduct/jupiter-rear.jpeg" alt="Jupiter Rear Brake Cable">
+                    <div class="product-details">
+                        <span>Nivan Jupiter Rear Brake Cable Assembly</span>
+                        <span class="product-moq">MOQ: 50 units</span>
+                    </div>
+                </div>
+                <div class="product-item first-item">
+                    <img src="imgsproduct/jupiter-throttle.jpeg" alt="Jupiter Throttle Cable">
+                    <div class="product-details">
+                        <span>Nivan Jupiter Throttle Cable Assembly</span>
+                        <span class="product-moq">MOQ: 50 units</span>
+                    </div>
+                </div>
+                <div class="product-item first-item">
+                    <img src="imgsproduct/front-break-cable-assembly.jpeg" alt="Front Brake Cable">
+                    <div class="product-details">
+                        <span>Nivan Front Brake Cable Assembly</span>
+                        <span class="product-moq">MOQ: 50 units</span>
+                    </div>
+                </div>
+                <div class="product-item first-item">
+                    <img src="imgsproduct/856-front-break.jpeg" alt="HF DLX 856 Front Brake Cable">
+                    <div class="product-details">
+                        <span>Nivan HF DLX 856 Front Brake Cable Assembly</span>
+                        <span class="product-moq">MOQ: 50 units</span>
+                    </div>
+                </div>
+                <div class="placeholder-item"></div>
+            </div>
+        </div>
+        </div>
+        <div class="carousel-buttons">
+            <button class="carousel-btn prev">❮</button>
+            <button class="carousel-btn next">❯</button>
+        </div>
+        </div>
+    </section>
+</div>
+
+
+
+        <!-- Brakes Cable Section -->
+        <section class="service-section scroll-reveal">
+            <div class="section-header">
+                <h2>Switch</h2>
+                <p>Offering products such as Activa Self Start Switch and Nivan Activa PU Green Bush.</p>
+            </div>
+            <div class="carousel-container">
+            <div class="carousel-track">
+                <div class="product-item">
+                    <img src="imgsproduct/product2.jpeg" alt="Activa Self Start Switch">
+                    <div class="product-details">
+                        <span>Activa Self Start Switch</span>
+                        <span class="product-moq">MOQ: 50 units</span>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="imgsproduct/product3.jpeg" alt="Nivan Activa PU Green Bush">
+                    <div class="product-details">
+                        <span>Nivan Activa PU Green Bush</span>
+                        <span class="product-moq">MOQ: 50 units</span>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Air Filters Section -->
+<section class="service-section scroll-reveal">
+    <div class="section-header">
+        <h2>Air Filters</h2>
+        <p>Offering products such as Nivan Air Filter and Nivan Pleasure Air Filter.</p>
+    </div>
+    <div class="carousel-container">
+        <div class="carousel-track">
+            <div class="product-item">
+                <img src="imgsproduct/product6.jpeg" alt="Nivan Air Filter">
+                <div class="product-details">
+                    <span>Nivan Air Filter</span>
+                    <span class="product-moq">MOQ: 50 Pieces</span>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="imgsproduct/product7.jpeg" alt="Nivan Pleasure Air Filter">
+                <div class="product-details">
+                    <span>Nivan Pleasure Air Filter</span>
+                    <span class="product-moq">MOQ: 50 Pieces</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+       <!-- Stainless Steel Bearings Section -->
+<section class="service-section scroll-reveal">
+    <div class="section-header">
+        <h2>Stainless Steel Bearings</h2>
+        <p>Offering Nivan Stainless Steel Bearings for high durability and performance.</p>
+    </div>
+    <div class="carousel-container">
+        <div class="carousel-track">
+            <div class="product-item">
+                <img src="imgsproduct/product1.jpeg" alt="Nivan Stainless Steel Bearings">
+                <div class="product-details">
+                    <span>Nivan Stainless Steel Bearings</span>
+                    <span class="product-moq">MOQ: 50 Pieces</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sprays Section -->
+<section class="service-section scroll-reveal">
+    <div class="section-header">
+        <h2>Sprays</h2>
+        <p>Offering MN Chain Lubrication Spray and MN Rust Off Spray for vehicle maintenance and care.</p>
+    </div>
+    <div class="carousel-container">
+        <div class="carousel-track">
+            <div class="product-item">
+                <img src="imgsproduct/product5.jpeg" alt="MN Chain Lubrication Spray">
+                <div class="product-details">
+                    <span>MN Chain Lubrication Spray</span>
+                    <span class="product-moq">MOQ: 10 Pieces</span>
+                </div>
+            </div>
+            <div class="product-item">
+                <img src="imgsproduct/rust.jpeg" alt="MN Rust Off Spray">
+                <div class="product-details">
+                    <span>MN Rust Off Spray</span>
+                    <span class="product-moq">MOQ: 25 Pieces</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Brake Shoes Section -->
+<section class="service-section scroll-reveal">
+    <div class="section-header">
+        <h2>Brake Shoes</h2>
+        <p>Featuring Nivan Activa Brake Shoe for reliable performance.</p>
+    </div>
+    <div class="carousel-container">
+        <div class="carousel-track">
+            <div class="product-item">
+                <img src="imgsproduct/product4.jpeg" alt="Nivan Activa Brake Shoe">
+                <div class="product-details">
+                    <span>Nivan Activa Brake Shoe</span>
+                    <span class="product-moq">MOQ: 50 Sets</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Two Wheeler Brake Shoes Section -->
+<section class="service-section scroll-reveal">
+    <div class="section-header">
+        <h2>Two Wheeler Brake Shoes</h2>
+        <p>Providing Nivan Hero Honda Brake Shoe for enhanced safety.</p>
+    </div>
+    <div class="carousel-container">
+        <div class="carousel-track">
+            <div class="product-item">
+                <img src="imgsproduct/honda-break-shoe.jpeg" alt="Nivan Hero Honda Brake Shoe">
+                <div class="product-details">
+                    <span>Nivan Hero Honda Brake Shoe</span>
+                    <span class="product-moq">MOQ: 10 Pieces</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Bushing Kit Section -->
+<section class="service-section scroll-reveal">
+    <div class="section-header">
+        <h2>Bushing Kit</h2>
+        <p>Featuring Nivan Activa 110 Link Bush Kit for superior quality.</p>
+    </div>
+    <div class="carousel-container">
+        <div class="carousel-track">
+            <div class="product-item">
+                <img src="imgsproduct/110-link.jpeg" alt="Nivan Activa 110 Link Bush Kit">
+                <div class="product-details">
+                    <span>Nivan Activa 110 Link Bush Kit</span>
+                    <span class="product-moq">MOQ: 50 Pieces</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+        <!-- Back to Home Button -->
+        <div class="back-home-container scroll-reveal">
+            <a href="index.html" class="back-home-btn">
+                <i class="fas fa-home"></i>
+                <span>Back to Home</span>
+            </a>
+        </div>
+    </div>
+
+
+    <script src="js/source.js">
+    </script>
+
+    <!-- Product Modal -->
+    <div class="product-modal" id="productModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+    
+            <div class="left-column">
+                <!-- Product Image -->
+                <img id="modalImage" src="product.jpg" alt="Product Image">
+                <img src="images/logo.jpg" alt="Nirvan Logo" class="nirvan-logo">
+
+                <!-- Mobile-specific details -->
+                <div class="mobile-details">
+                    <h1 id="mobileTitle">Product Name</h1>
+                    <h2 id="mobileMOQ">MOQ: 100</h2>
+                    <h3>Minimum order of ₹10,000 combined required</h3>
+                </div>
+            </div>
+            
+            <!-- Center Column (hidden on mobile) -->
+            <div class="center-column">
+                <div class="modal-details">
+                    <h1 id="modalTitle"></h1>
+                    <h2 id="modalPrice"></h2>
+                    <h2 id="modalMOQ"></h2>
+                    <h3>Minimum order of ₹10,000 combined required</h3>
+                    <div class="available-at">
+                        <img src="images/indiamart.png" alt="Indiamart Logo" class="indiamart-logo">
+                        <a href="https://IndiaMART.in/0okyJyqa" target="_blank"><span class="highlight">ALSO AVAILABLE AT INDIAMART</span></a>
+                    </div>
+                    <div class ="extrainfo">
+                        <p class="verified-seller">✅ Verified IndiaMart Supplier</p>
+                        <p class="gstn-info">GSTN: <span style="font-weight: bold;">24ASFPP7381L1Z7</span></p>
+                        <p class="address">Registered Address: GALAXY ENTERPRISE  Shop No.32, Satsang Complex, Opp. BAPS School, Near Narayanwadi Hotel, Padra Road, Atladra, Vadodara-390012, Gujarat, India</p>
+                    </div>
+                </div>
+            </div>
+            
+    
+            <!-- Right Column: Extra Details -->
+            <div class="right-column">
+                <div id="modalExtraDetails" class="extra-details"></div>
+            
+                <div class="owner-info desktop-only-info">
+                    <p class="owner-name">Owner: Gurusharan Patel</p>
+                    <p class="owner-phone">Phone: +91 95195 15015</p>
+                </div>
+
+            <!-- Bottom Buttons -->
+            <div class="bottom-buttons">
+                <a href="https://wa.me/yourPhoneNumber" class="whatsapp-link" target="_blank">
+                    <img src="images/WhatsApp.svg.png" alt="WhatsApp Icon">
+                </a>
+                <button class="contact-button" onclick="redirectToContact()">Contact Us</button>
+            </div>
+            
+            </div>
+        </div>
+    </div>
+    <a href="https://wa.me/+919519515015" class="whatsapp-float" target="_blank">
+        <img src="images/WhatsApp.svg.png" alt="WhatsApp Icon" class="whatsapp-float-icon">
+    </a>
+</body>
+</html>
